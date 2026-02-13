@@ -1,0 +1,212 @@
+/* ============================================
+   Home Page Styles
+   ============================================ */
+
+/* --- Hero --- */
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #1A3C40;
+  background-image: url('/images/hero.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--color-cream);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(26, 60, 64, 0.7),
+    rgba(26, 60, 64, 0.85)
+  );
+  z-index: 1;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: var(--spacing-lg);
+}
+
+.hero__subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.1;
+}
+
+.hero__text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-lg);
+  color: rgba(255, 248, 240, 0.9);
+}
+
+.hero__buttons {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+
+  .hero__title {
+    font-size: 2.25rem;
+  }
+
+  .hero__text {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+/* --- Featured Dishes --- */
+.featured {
+  padding: var(--spacing-xl) 0;
+}
+
+.featured__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.featured .card__tags {
+  display: flex;
+  gap: 0.25rem;
+  margin-top: var(--spacing-xs);
+}
+
+/* --- Story Teaser --- */
+.story-teaser {
+  padding: var(--spacing-xl) 0;
+}
+
+.story-teaser__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.story-teaser__image {
+  border-radius: var(--radius-lg);
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.story-teaser__content h2 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.story-teaser__content p {
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .story-teaser__inner {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .story-teaser__image {
+    height: 280px;
+  }
+}
+
+/* --- Reviews Section --- */
+.reviews-section {
+  padding: var(--spacing-xl) 0;
+}
+
+.reviews-section .section-title {
+  color: var(--color-warm-gold);
+}
+
+.reviews-section .section-title::after {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.google-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.1rem;
+  color: var(--color-cream);
+}
+
+.google-rating__stars {
+  color: var(--color-warm-gold);
+  font-size: 1.3rem;
+}
+
+.google-rating__score {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--color-warm-gold);
+}
+
+/* --- Instagram Section --- */
+.instagram-section {
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-lg);
+}
+
+.instagram-grid__item {
+  aspect-ratio: 1;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.instagram-grid__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.instagram-grid__item:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .instagram-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

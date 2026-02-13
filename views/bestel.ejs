@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="/css/order.css">
+  <style>
+    .jamezz-embed {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-md);
+    }
+    .jamezz-embed iframe {
+      width: 100%;
+      height: calc(100vh - 80px);
+      min-height: 600px;
+      border: none;
+      border-radius: var(--radius-lg);
+      background: #fff;
+    }
+    @media (max-width: 768px) {
+      .jamezz-embed {
+        padding: 0;
+      }
+      .jamezz-embed iframe {
+        height: calc(100vh - 60px);
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main>
+    <!-- Jamezz Order System -->
+    <div class="jamezz-embed">
+      <iframe
+        src="https://tibtopthai.jamezz.app"
+        title="Tib Top Thai bestelsysteem"
+        allow="payment"
+        loading="lazy">
+      </iframe>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/mobile-buttons') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

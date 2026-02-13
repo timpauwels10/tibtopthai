@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <%- include('partials/head') %>
+  <style>
+    .reserveer-hero {
+      background: linear-gradient(rgba(26, 60, 64, 0.85), rgba(26, 60, 64, 0.9)),
+                  url('/images/restaurant/interior-day.jpg') center/cover no-repeat;
+      color: var(--color-cream);
+      text-align: center;
+      padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-lg);
+    }
+    .reserveer-hero h1 { color: var(--color-white); margin-bottom: var(--spacing-xs); }
+    .reserveer-hero p { color: rgba(255,248,240,0.8); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+    .reserveer-widget {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: var(--spacing-lg) var(--spacing-md) var(--spacing-2xl);
+    }
+    .reserveer-widget iframe {
+      width: 100%;
+      min-height: 700px;
+      border: none;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+    }
+    .reserveer-info {
+      text-align: center;
+      margin-top: var(--spacing-lg);
+      color: var(--color-text-light);
+    }
+    .reserveer-info a {
+      color: var(--color-warm-gold);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main>
+    <section class="reserveer-hero">
+      <h1>Reserveer uw Tafel</h1>
+      <p>Geniet van een authentieke Thaise eetervaring in een warme en gezellige sfeer. Reserveer eenvoudig online.</p>
+    </section>
+
+    <section class="reserveer-widget">
+      <iframe
+        src="https://bookings.zenchef.com/results?rid=377873&pid=1001"
+        title="Reserveer een tafel bij Tib Top Thai"
+        loading="lazy"
+        allow="payment"
+      ></iframe>
+
+      <div class="reserveer-info">
+        <p>
+          Problemen met reserveren? Bel ons gerust op
+          <a href="tel:+32471371157">+32 471 37 11 57</a>
+          of stuur een
+          <a href="https://wa.me/32471371157" target="_blank" rel="noopener noreferrer">WhatsApp</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/mobile-buttons') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

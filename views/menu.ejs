@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="/css/menu.css">
+
+  <!-- Schema.org: Menu -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Menu",
+    "name": "Menu — Tib Top Thai",
+    "url": "https://tibtopthai.be/menu",
+    "hasMenuSection": [
+      <% menuData.categories.filter(c => c.items).forEach((cat, ci, arr) => { %>
+      {
+        "@type": "MenuSection",
+        "name": "<%= cat.name %>",
+        "hasMenuItem": [
+          <% cat.items.forEach((item, ii) => { %>
+          {
+            "@type": "MenuItem",
+            "name": "<%= item.name %>",
+            "description": "<%= item.description %>",
+            "offers": {
+              "@type": "Offer",
+              "price": "<%= item.price ? item.price.toFixed(2) : menuData.proteinChoices[0].price.toFixed(2) %>",
+              "priceCurrency": "EUR"
+            }
+          }<%= ii < cat.items.length - 1 ? ',' : '' %>
+          <% }) %>
+        ]
+      }<%= ci < arr.length - 1 ? ',' : '' %>
+      <% }) %>
+    ]
+  }
+  </script>
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main>
+    <!-- Hero -->
+    <section class="menu-hero">
+      <h1>Ons Menu</h1>
+      <p>Authentieke Thaise gerechten, bereid met verse ingrediënten en traditionele recepten</p>
+    </section>
+
+    <!-- Legend -->
+    <div class="menu-legend">
+      <span class="menu-legend__item"><%- '&#127798;' %> Pikant</span>
+      <span class="menu-legend__item"><span class="tag tag--vegan" style="margin: 0;"><%- '&#127793;' %> Vegan</span></span>
+      <span class="menu-legend__item"><span class="tag tag--gf" style="margin: 0;">GF</span> Glutenvrij</span>
+      <span class="menu-legend__item"><%- '&#129489;&#8205;&#127859;' %> Chef's special</span>
+    </div>
+
+    <%
+      const allergenInfo = {
+        1: { icon: '\u{1F33E}', name: 'Gluten' },
+        2: { icon: '\u{1F990}', name: 'Schaaldieren' },
+        3: { icon: '\u{1F95A}', name: 'Eieren' },
+        4: { icon: '\u{1F41F}', name: 'Vis' },
+        5: { icon: '\u{1F95C}', name: 'Noten' },
+        6: { icon: '\u{1FAD8}', name: 'Soja' },
+        7: { icon: '\u{1F95B}', name: 'Melk' },
+        8: { icon: '\u{1F344}', name: 'Champignons' }
+      };
+    %>
+
+    <!-- Tabs -->
+    <div class="menu-tabs" role="tablist" aria-label="Menu categorieën">
+      <button class="menu-tab active" data-category="all" role="tab">Alles</button>
+      <% menuData.categories.forEach(cat => { %>
+        <button class="menu-tab" data-category="<%= cat.id %>" role="tab"><%= cat.name %></button>
+      <% }) %>
+    </div>
+
+    <!-- Menu Items -->
+    <div class="container">
+      <% menuData.categories.forEach(cat => { %>
+        <section class="menu-category" data-category="<%= cat.id %>" id="<%= cat.id %>">
+          <h2 class="menu-category__title"><%= cat.name %></h2>
+          <% if (cat.subtitle) { %>
+            <p class="menu-category__subtitle"><%= cat.subtitle %></p>
+          <% } %>
+
+          <% if (cat.items) { %>
+            <% if (cat.hasProteinChoice) { %>
+              <div class="protein-legend">
+                <h4 class="protein-legend__title">Keuze</h4>
+                <div class="protein-legend__options">
+                  <% menuData.proteinChoices.forEach(choice => { %>
+                    <div class="protein-legend__option">
+                      <span class="protein-legend__icon"><%- choice.icon %></span>
+                      <span class="protein-legend__name"><%= choice.name %></span>
+                      <span class="protein-legend__price">&euro; <%= choice.price.toFixed(2) %></span>
+                    </div>
+                  <% }) %>
+                </div>
+              </div>
+            <% } %>
+
+            <% cat.items.forEach(item => { %>
+              <div class="menu-item">
+                <% if (item.image) { %>
+                  <img class="menu-item__image" src="/images/food/<%= item.image %>" alt="<%= item.name %>" loading="lazy">
+                <% } %>
+                <div class="menu-item__info">
+                  <h3 class="menu-item__name">
+                    <% if (item.number) { %><span class="menu-item__number"><%= item.number %>.</span><% } %>
+                    <%= item.name %>
+                    <% if (item.subtitle) { %><span class="menu-item__subtitle">(<%= item.subtitle %>)</span><% } %>
+                    <% if (item.spicy > 0) { %><span class="menu-item__spicy"><%- '&#127798;'.repeat(item.spicy) %></span><% } %>
+                    <% if (item.chefSpecial) { %><span class="menu-item__chef" title="Chef's special"><%- '&#129489;&#8205;&#127859;' %></span><% } %>
+                  </h3>
+                  <p class="menu-item__description"><%= item.description %></p>
+                  <div class="menu-item__tags">
+                    <% if (item.tags) { item.tags.forEach(tag => { %>
+                      <% if (tag === 'vegan') { %><span class="tag tag--vegan"><%- '&#127793;' %> Vegan</span><% } %>
+                      <% if (tag === 'gf') { %><span class="tag tag--gf">GF</span><% } %>
+                    <% }) } %>
+                    <% if (item.allergens && item.allergens.length > 0) { %>
+                      <% item.allergens.forEach(a => { %>
+                        <% if (allergenInfo[a]) { %>
+                          <span class="tag tag--allergen" title="<%= allergenInfo[a].name %>"><%= allergenInfo[a].icon %> <%= allergenInfo[a].name %></span>
+                        <% } %>
+                      <% }) %>
+                    <% } %>
+                  </div>
+                </div>
+                <% if (item.price) { %>
+                  <div class="menu-item__price">&euro; <%= item.price.toFixed(2) %></div>
+                <% } %>
+              </div>
+            <% }) %>
+          <% } %>
+
+        </section>
+      <% }) %>
+    </div>
+
+    <!-- CTA -->
+    <section class="section section--teal" style="text-align: center;">
+      <div class="container">
+        <h2>Zin in Thais?</h2>
+        <p style="margin: var(--spacing-sm) 0 var(--spacing-md); color: var(--color-cream);">
+          Bestel online voor afhalen of reserveer een tafel bij ons.
+        </p>
+        <div style="display: flex; gap: var(--spacing-sm); justify-content: center; flex-wrap: wrap;">
+          <a href="/bestel" class="btn btn--primary btn--lg">Bestel Online</a>
+          <a href="/reserveer" class="btn btn--secondary btn--lg">Reserveer</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/mobile-buttons') %>
+  <script src="/js/main.js"></script>
+  <script src="/js/menu.js"></script>
+</body>
+</html>

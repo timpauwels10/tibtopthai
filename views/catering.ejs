@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <%- include('partials/head') %>
+  <style>
+    .catering-hero {
+      background-color: #1A3C40;
+      background-image: url('/images/catering/buffet-spread.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: var(--color-cream);
+      text-align: center;
+      padding: var(--spacing-2xl) var(--spacing-md);
+    }
+    .catering-hero { position: relative; }
+    .catering-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(26, 60, 64, 0.7), rgba(26, 60, 64, 0.85));
+      z-index: 1;
+    }
+    .catering-hero h1, .catering-hero p { position: relative; z-index: 2; }
+    .catering-hero h1 { color: var(--color-white); margin-bottom: var(--spacing-xs); }
+    .catering-hero p { color: rgba(255,248,240,0.8); font-size: 1.15rem; max-width: 650px; margin: 0 auto; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-md);
+    }
+
+    .service-card {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-lg);
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .service-card__icon {
+      font-size: 3rem;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .service-card h3 {
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .service-card p {
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Packages */
+    .packages {
+      padding: var(--spacing-xl) 0;
+    }
+
+    .package-card {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-lg);
+      box-shadow: var(--shadow-sm);
+      border-top: 4px solid var(--color-warm-gold);
+    }
+
+    .package-card h3 {
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .package-card__price {
+      color: var(--color-warm-gold);
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .package-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .package-card ul li {
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+    }
+
+    .package-card ul li:last-child {
+      border-bottom: none;
+    }
+
+    .package-card ul li::before {
+      content: '✓ ';
+      color: var(--color-warm-gold);
+      font-weight: 700;
+    }
+
+    /* Gallery */
+    .catering-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-xs);
+    }
+
+    .catering-gallery__item {
+      aspect-ratio: 4/3;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+
+    .catering-gallery__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .catering-gallery__item:hover img {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .catering-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main>
+    <section class="catering-hero">
+      <h1>Catering & Events</h1>
+      <p>Breng de authentieke smaken van Thailand naar uw feest, bedrijfsevent of privé-diner</p>
+    </section>
+
+    <!-- Services -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title fade-in">Onze diensten</h2>
+        <div class="services-grid">
+          <div class="service-card fade-in">
+            <div class="service-card__icon">&#127860;</div>
+            <h3>Bedrijfscatering</h3>
+            <p>
+              Verras uw team of klanten met een authentiek Thais buffet.
+              Ideaal voor vergaderingen, teambuildings, bedrijfsfeesten
+              en netwerkevenementen.
+            </p>
+          </div>
+
+          <div class="service-card fade-in">
+            <div class="service-card__icon">&#127881;</div>
+            <h3>Privé-evenementen</h3>
+            <p>
+              Verjaardag, huwelijk, babyshower of familiefeest — wij zorgen
+              voor een onvergetelijk Thais menu op maat van uw wensen en budget.
+            </p>
+          </div>
+
+          <div class="service-card fade-in">
+            <div class="service-card__icon">&#129379;</div>
+            <h3>Kookworkshops</h3>
+            <p>
+              Leer zelf de geheimen van de Thaise keuken. Nipat geeft
+              interactieve kookworkshops voor groepen van 6 tot 20 personen.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Example Packages -->
+    <section class="section section--white">
+      <div class="container">
+        <h2 class="section-title fade-in">Voorbeeldmenu's</h2>
+        <div class="grid grid--3">
+          <div class="package-card fade-in">
+            <h3>Pakket Chiang Mai</h3>
+            <p class="package-card__price">Vanaf &euro;25 p.p.</p>
+            <ul>
+              <li>Tom Kha Kai soep</li>
+              <li>Satay kipspiezen</li>
+              <li>Groene curry met kip</li>
+              <li>Jasmijnrijst</li>
+              <li>Mango Sticky Rice</li>
+            </ul>
+          </div>
+
+          <div class="package-card fade-in">
+            <h3>Pakket Bangkok</h3>
+            <p class="package-card__price">Vanaf &euro;35 p.p.</p>
+            <ul>
+              <li>Tom Yam Kung</li>
+              <li>Por Pia Thod & Som Tam</li>
+              <li>Pad Thai</li>
+              <li>Massaman Curry</li>
+              <li>Pad Kra Pao</li>
+              <li>Mango Sticky Rice & Kokosijs</li>
+            </ul>
+          </div>
+
+          <div class="package-card fade-in">
+            <h3>Pakket Royal Thai</h3>
+            <p class="package-card__price">Vanaf &euro;45 p.p.</p>
+            <ul>
+              <li>Tom Yam Kung & Tom Kha</li>
+              <li>Satay, Tod Mun Pla & Larb Kai</li>
+              <li>Gaeng Phet Ped Yang</li>
+              <li>Pad Thai Garnalen</li>
+              <li>Pla Rad Prik</li>
+              <li>Complete dessertselectie</li>
+              <li>Thaise ijsthee & kokoswater</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-center fade-in" style="margin-top: var(--spacing-md); color: var(--color-text-light); font-size: 0.9rem;">
+          Alle menu's zijn aanpasbaar aan uw wensen, allergieën en dieet. Veggie en vegan opties beschikbaar.
+        </p>
+      </div>
+    </section>
+
+    <!-- Cooking Workshops Gallery -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title fade-in">Kookworkshops</h2>
+        <p class="text-center fade-in" style="color: var(--color-text-light); max-width: 600px; margin: -1rem auto var(--spacing-lg);">
+          Leer zelf Thais koken onder begeleiding van Nipat. Een unieke ervaring voor vriendengroepen, teambuildings of een origineel cadeau.
+        </p>
+        <div class="catering-gallery fade-in">
+          <div class="catering-gallery__item"><img src="/images/workshops/setup.jpg" alt="Kookworkshop opstelling met pannen en verse ingrediënten" loading="lazy"></div>
+          <div class="catering-gallery__item"><img src="/images/workshops/group-prep.jpg" alt="Deelnemers bereiden samen Thaise gerechten" loading="lazy"></div>
+          <div class="catering-gallery__item"><img src="/images/workshops/nipat-demo.jpg" alt="Nipat geeft uitleg aan de groep" loading="lazy"></div>
+          <div class="catering-gallery__item"><img src="/images/workshops/cooking-woks.jpg" alt="Deelnemers koken in woks" loading="lazy"></div>
+          <div class="catering-gallery__item"><img src="/images/workshops/dinner-table.jpg" alt="Groep geniet samen van hun zelfgemaakte gerechten" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catering Gallery -->
+    <section class="section section--white">
+      <div class="container">
+        <h2 class="section-title fade-in">Catering Sfeerbeelden</h2>
+        <div class="catering-gallery fade-in">
+          <div class="catering-gallery__item"><img src="/images/catering/satay-springrolls.jpg" alt="Satay en loempia's op een cateringbuffet" loading="lazy"></div>
+          <div class="catering-gallery__item"><img src="/images/catering/buffet-spread.jpg" alt="Uitgebreid Thais cateringbuffet" loading="lazy"></div>
+          <div class="catering-gallery__item"><img src="/images/catering/noodle-bowls.jpg" alt="Noedelbowls klaar voor gasten" loading="lazy"></div>
+          <div class="catering-gallery__item"><img src="/images/catering/event-guests.jpg" alt="Gasten genieten van Thais eten op een event" loading="lazy"></div>
+          <div class="catering-gallery__item"><img src="/images/catering/wontons.jpg" alt="Krokante wontons met loempia's" loading="lazy"></div>
+          <div class="catering-gallery__item"><img src="/images/catering/springrolls-orchid.jpg" alt="Loempia's met orchidee decoratie" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--teal" style="text-align: center;">
+      <div class="container">
+        <h2>Interesse? Neem contact op!</h2>
+        <p style="margin: var(--spacing-sm) 0 var(--spacing-md); color: var(--color-cream); max-width: 500px; margin-left: auto; margin-right: auto;">
+          Vertel ons over uw event en wij stellen een menu op maat samen. Vrijblijvend en persoonlijk.
+        </p>
+        <div style="display: flex; gap: var(--spacing-sm); justify-content: center; flex-wrap: wrap;">
+          <a href="tel:+32471371157" class="btn btn--primary btn--lg">Bel ons</a>
+          <a href="https://wa.me/32471371157" class="btn btn--secondary btn--lg" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="/contact" class="btn btn--secondary btn--lg">Contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/mobile-buttons') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

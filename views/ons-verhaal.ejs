@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <%- include('partials/head') %>
+  <style>
+    .story-hero {
+      background: linear-gradient(rgba(26, 60, 64, 0.8), rgba(26, 60, 64, 0.9)),
+                  url('/images/restaurant/interior-entrance.jpg') center/cover no-repeat;
+      color: var(--color-cream);
+      text-align: center;
+      padding: var(--spacing-2xl) var(--spacing-md);
+    }
+    .story-hero h1 { color: var(--color-white); font-size: 3rem; margin-bottom: var(--spacing-xs); }
+    .story-hero p { color: rgba(255,248,240,0.8); font-size: 1.15rem; max-width: 600px; margin: 0 auto; }
+
+    .story-section {
+      padding: var(--spacing-xl) 0;
+    }
+
+    .story-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-xl);
+      align-items: center;
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .story-block:nth-child(even) .story-block__image {
+      order: -1;
+    }
+
+    .story-block__image {
+      width: 100%;
+      height: 380px;
+      border-radius: var(--radius-lg);
+      object-fit: cover;
+    }
+
+    .story-block__content h2 {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .story-block__content p {
+      color: var(--color-text-light);
+      line-height: 1.8;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .story-quote {
+      text-align: center;
+      padding: var(--spacing-xl) var(--spacing-md);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .story-quote blockquote {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--color-deep-teal);
+      font-style: italic;
+      line-height: 1.5;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .story-quote blockquote::before {
+      content: '"';
+      font-size: 3rem;
+      color: var(--color-warm-gold);
+      line-height: 0;
+      vertical-align: -0.5rem;
+      margin-right: 0.25rem;
+    }
+
+    .story-quote cite {
+      font-style: normal;
+      color: var(--color-warm-gold);
+      font-weight: 600;
+    }
+
+    /* Gallery */
+    .story-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-sm);
+      margin-top: var(--spacing-lg);
+    }
+
+    .story-gallery__item {
+      aspect-ratio: 4/3;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .story-gallery__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .story-hero h1 { font-size: 2.25rem; }
+
+      .story-block {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+      }
+
+      .story-block:nth-child(even) .story-block__image {
+        order: 0;
+      }
+
+      .story-block__image {
+        height: 260px;
+      }
+
+      .story-gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .story-quote blockquote {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main>
+    <section class="story-hero">
+      <h1>Ons Verhaal</h1>
+      <p>Van de markten in Noord-Thailand tot het hart van Sint-Niklaas</p>
+    </section>
+
+    <div class="container">
+      <section class="story-section">
+        <!-- Block 1: Roots -->
+        <div class="story-block fade-in">
+          <div class="story-block__content">
+            <h2>Waar het begon</h2>
+            <p>
+              Nipat groeide op in Noord-Thailand, omringd door de geuren en smaken van de
+              lokale markten. Haar moeder en grootmoeder leerden haar de geheimen van de
+              Thaise keuken — van de perfecte balans tussen zoet, zuur, zout en pittig
+              tot het belang van verse, eerlijke ingrediënten.
+            </p>
+            <p>
+              Als jonge vrouw werkte Nipat als stewardess bij een Thaise luchtvaartmaatschappij.
+              Ze reisde de wereld rond, maar de herinnering aan de smaken van thuis liet haar
+              nooit los.
+            </p>
+          </div>
+          <img class="story-block__image" src="/images/food/curry-paste.jpg" alt="Authentieke Thaise currypasta's" loading="lazy">
+        </div>
+
+        <!-- Quote -->
+        <div class="story-quote fade-in">
+          <blockquote>
+            Koken is liefde die je kunt proeven. Elk gerecht dat ik maak, draagt een stukje Thailand in zich.
+          </blockquote>
+          <cite>— Nipat, chef & eigenaar</cite>
+        </div>
+
+        <!-- Block 2: Journey to Belgium -->
+        <div class="story-block fade-in">
+          <div class="story-block__content">
+            <h2>De weg naar België</h2>
+            <p>
+              De liefde bracht Nipat naar België, naar Sint-Niklaas. Maar de liefde voor
+              koken bleef even sterk. Eerst kookte ze voor vrienden en familie — die allemaal
+              onder de indruk waren van haar authentieke Thaise gerechten.
+            </p>
+            <p>
+              Aangemoedigd door hun enthousiasme begon Nipat kooklessen te geven en
+              pop-up evenementen te organiseren. De vraag groeide en de droom van een eigen
+              restaurant werd steeds concreter.
+            </p>
+          </div>
+          <img class="story-block__image" src="/images/press/newspaper.jpg" alt="Nipat in de pers" loading="lazy">
+        </div>
+
+        <!-- Block 3: The Restaurant -->
+        <div class="story-block fade-in">
+          <div class="story-block__content">
+            <h2>Tib Top Thai</h2>
+            <p>
+              En zo werd Tib Top Thai geboren — een plek waar de echte smaken van Thailand
+              samenkomen met de warmte van Belgische gastvrijheid. Elke curry wordt van nul
+              bereid met verse kruiden. Elke schotel vertelt het verhaal van generaties
+              Thaise kookkunst.
+            </p>
+            <p>
+              Op het Hendrik Heymanplein, in het hart van Sint-Niklaas, verwelkomt Nipat
+              u met een glimlach en een bord vol smaak. Want bij Tib Top Thai ben je geen
+              klant — je bent familie.
+            </p>
+          </div>
+          <img class="story-block__image" src="/images/restaurant/interior-lamps.jpg" alt="Restaurant Tib Top Thai interieur" loading="lazy">
+        </div>
+      </section>
+
+      <!-- Photo Gallery -->
+      <section style="padding-bottom: var(--spacing-xl);">
+        <h2 class="section-title fade-in">Sfeerbeelden</h2>
+        <div class="story-gallery fade-in">
+          <div class="story-gallery__item"><img src="/images/restaurant/interior-ferns.jpg" alt="Restaurant sfeer met varens en lampen" loading="lazy"></div>
+          <div class="story-gallery__item"><img src="/images/team/team.jpg" alt="Het team van Tib Top Thai" loading="lazy"></div>
+          <div class="story-gallery__item"><img src="/images/food/pad-thai.jpg" alt="Pad Thai" loading="lazy"></div>
+          <div class="story-gallery__item"><img src="/images/restaurant/interior-evening-1.jpg" alt="Restaurant sfeer 's avonds" loading="lazy"></div>
+          <div class="story-gallery__item"><img src="/images/restaurant/mural.jpg" alt="Thaise muurschildering" loading="lazy"></div>
+          <div class="story-gallery__item"><img src="/images/food/tom-kha.jpg" alt="Tom Kha soep" loading="lazy"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CTA -->
+    <section class="section section--teal" style="text-align: center;">
+      <div class="container">
+        <h2>Kom langs en proef zelf</h2>
+        <p style="margin: var(--spacing-sm) 0 var(--spacing-md); color: var(--color-cream);">
+          Reserveer een tafel en ervaar de authentieke Thaise keuken van Nipat.
+        </p>
+        <a href="/reserveer" class="btn btn--primary btn--lg">Reserveer een tafel</a>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/mobile-buttons') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

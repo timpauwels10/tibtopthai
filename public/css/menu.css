@@ -1,0 +1,267 @@
+/* ============================================
+   Menu Page Styles
+   ============================================ */
+
+.menu-hero {
+  background: linear-gradient(rgba(26, 60, 64, 0.85), rgba(26, 60, 64, 0.9)),
+              url('/images/food/pad-thai-ingredients.jpg') center/cover no-repeat;
+  color: var(--color-cream);
+  text-align: center;
+  padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+.menu-hero h1 {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-xs);
+}
+
+.menu-hero p {
+  color: rgba(255, 248, 240, 0.8);
+  font-size: 1.1rem;
+}
+
+/* --- Tabs --- */
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: var(--spacing-md);
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: var(--header-height);
+  z-index: 100;
+}
+
+.menu-tab {
+  padding: 0.5rem 1.25rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  background: none;
+  border: 2px solid transparent;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.menu-tab:hover {
+  color: var(--color-deep-teal);
+  border-color: var(--color-border);
+}
+
+.menu-tab.active {
+  color: var(--color-deep-teal);
+  border-color: var(--color-warm-gold);
+  background: rgba(212, 168, 67, 0.08);
+}
+
+/* --- Menu Category --- */
+.menu-category {
+  padding: var(--spacing-lg) 0;
+}
+
+.menu-category__title {
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 2px solid var(--color-warm-gold);
+  display: inline-block;
+}
+
+.menu-category__subtitle {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* --- Section-Level Protein Legend --- */
+.protein-legend {
+  background: var(--color-deep-teal);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.protein-legend__title {
+  color: var(--color-warm-gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.6rem;
+}
+
+.protein-legend__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.5rem;
+}
+
+.protein-legend__option {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.protein-legend__icon {
+  font-size: 1.1rem;
+  line-height: 1;
+  width: 1.3rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.protein-legend__name {
+  color: var(--color-cream);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.protein-legend__price {
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* --- Menu Item --- */
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item__image {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.menu-item__image:hover {
+  opacity: 0.85;
+}
+
+.menu-item__info {
+  flex: 1;
+}
+
+.menu-item__name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-deep-teal);
+  margin-bottom: 0.25rem;
+}
+
+.menu-item__number {
+  color: var(--color-warm-gold);
+  font-weight: 700;
+  margin-right: 0.25rem;
+}
+
+.menu-item__chef {
+  margin-left: 0.35rem;
+}
+
+.menu-item__spicy {
+  margin-left: 0.35rem;
+  font-size: 0.95rem;
+}
+
+.menu-item__subtitle {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-left: 0.25rem;
+}
+
+.menu-item__description {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.menu-item__tags {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.menu-item__price {
+  font-weight: 700;
+  color: var(--color-deep-teal);
+  font-size: 1.05rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* --- Legend --- */
+.menu-legend {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.menu-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+@media (max-width: 768px) {
+  .protein-legend__options {
+    gap: 0.2rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-item {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+
+  .menu-item__image {
+    width: 64px;
+    height: 64px;
+  }
+
+  .menu-item__info {
+    min-width: 0;
+  }
+
+  .menu-item__price {
+    width: 100%;
+    text-align: right;
+  }
+
+  .protein-legend {
+    padding: 0.75rem 1rem;
+  }
+
+  .protein-legend__options {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+}

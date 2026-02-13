@@ -1,0 +1,25 @@
+<header class="header" role="banner">
+  <div class="header__inner">
+    <a href="/" class="header__logo" aria-label="Tib Top Thai — Startpagina">
+      <img src="/images/logo.jpg" alt="Tib Top Thai" style="height: 40px; width: auto;">
+    </a>
+
+    <button class="hamburger" aria-label="Menu openen" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="header__nav" role="navigation" aria-label="Hoofdnavigatie">
+      <a href="/" class="<%= currentPath === '/' ? 'active' : '' %>">Home</a>
+      <a href="/menu" class="<%= currentPath === '/menu' ? 'active' : '' %>">Menu</a>
+      <a href="/ons-verhaal" class="<%= currentPath === '/ons-verhaal' ? 'active' : '' %>">Ons Verhaal</a>
+      <a href="/catering" class="<%= currentPath === '/catering' ? 'active' : '' %>">Catering</a>
+      <a href="/contact" class="<%= currentPath === '/contact' ? 'active' : '' %>">Contact</a>
+      <div class="header__cta">
+        <a href="/reserveer" class="btn btn--primary btn--sm">Reserveer</a>
+        <a href="/bestel" class="btn btn--secondary btn--sm">Bestel Online</a>
+      </div>
+    </nav>
+  </div>
+</header>

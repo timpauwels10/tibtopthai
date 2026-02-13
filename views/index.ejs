@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="/css/home.css">
+
+  <!-- Schema.org: Restaurant -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Tib Top Thai",
+    "image": "https://tibtopthai.be/images/og-image.jpg",
+    "url": "https://tibtopthai.be",
+    "telephone": "+32471371157",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hendrik Heymanplein 150",
+      "addressLocality": "Sint-Niklaas",
+      "postalCode": "9100",
+      "addressCountry": "BE"
+    },
+    "servesCuisine": "Thai",
+    "priceRange": "€€",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "17:30", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "17:30", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "12:00", "closes": "14:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "17:30", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "17:30", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "14:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "17:30", "closes": "22:00" }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "reviewCount": "120"
+    }
+  }
+  </script>
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" aria-label="Welkom bij Tib Top Thai">
+      <div class="hero__content">
+        <p class="hero__subtitle">Authentiek Thais Restaurant</p>
+        <h1 class="hero__title">Welkom bij<br>Tib Top Thai</h1>
+        <p class="hero__text">
+          De echte smaken van Thailand, met liefde bereid in het hart van Sint-Niklaas.
+          Verse ingrediënten, traditionele recepten en een warm welkom.
+        </p>
+        <div class="hero__buttons">
+          <a href="/reserveer" class="btn btn--primary btn--lg">Reserveer een tafel</a>
+          <a href="/bestel" class="btn btn--secondary btn--lg">Bestel online</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Opening Hours -->
+    <%- include('partials/opening-hours') %>
+
+    <!-- Featured Dishes -->
+    <section class="featured section" aria-label="Onze favorieten">
+      <div class="container">
+        <h2 class="section-title">Onze Favorieten</h2>
+        <div class="featured__grid">
+          <% const featuredDishes = [];
+             menuData.categories.forEach(cat => {
+               if (cat.items) {
+                 cat.items.forEach(item => {
+                   if (item.featured) featuredDishes.push({ ...item, category: cat.name, hasProteinChoice: cat.hasProteinChoice });
+                 });
+               }
+             });
+          %>
+          <% featuredDishes.forEach(dish => { %>
+            <article class="card fade-in">
+              <div class="card__image" style="background: linear-gradient(135deg, #1A3C40, #2a5a60); display: flex; align-items: center; justify-content: center; color: var(--color-warm-gold); font-size: 3rem;">
+                <% if (dish.image) { %>
+                  <img src="/images/food/<%= dish.image %>" alt="<%= dish.name %>" style="width:100%;height:100%;object-fit:cover;">
+                <% } else if (dish.spicy >= 2) { %>&#127798;<% } else { %>&#127834;<% } %>
+              </div>
+              <div class="card__body">
+                <h3 class="card__title"><%= dish.name %></h3>
+                <p class="card__text"><%= dish.description %></p>
+                <div class="card__tags">
+                  <% if (dish.spicy > 0) { %>
+                    <span class="tag tag--spicy"><%- '&#127798;'.repeat(dish.spicy) %></span>
+                  <% } %>
+                  <% dish.tags.forEach(tag => { %>
+                    <% if (tag === 'vegan') { %><span class="tag tag--vegan">&#127793; Vegan</span><% } %>
+                    <% if (tag === 'gf') { %><span class="tag tag--gf">GF</span><% } %>
+                  <% }) %>
+                </div>
+                <p class="card__price">
+                  <% if (dish.price) { %>
+                    &euro; <%= dish.price.toFixed(2) %>
+                  <% } else if (dish.hasProteinChoice) { %>
+                    Vanaf &euro; <%= menuData.proteinChoices[0].price.toFixed(2) %>
+                  <% } %>
+                </p>
+                <a href="/menu" class="btn btn--outline btn--sm" style="margin-top: 0.75rem; width: 100%;">Bekijk op menu</a>
+              </div>
+            </article>
+          <% }) %>
+        </div>
+        <p class="text-center" style="margin-top: var(--spacing-lg);">
+          <a href="/menu" class="btn btn--outline">Bekijk het volledige menu</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Story Teaser -->
+    <section class="story-teaser section section--white fade-in" aria-label="Ons verhaal">
+      <div class="container">
+        <div class="story-teaser__inner">
+          <img class="story-teaser__image" src="/images/team/nipat.jpg" alt="Chef Nipat in de keuken" loading="lazy">
+          <div class="story-teaser__content">
+            <h2>Van Thailand naar<br>Sint-Niklaas</h2>
+            <p>
+              Van de markten in Noord-Thailand tot een warm restaurant op het Hendrik Heymanplein —
+              ontdek het verhaal van Nipat en hoe de authentieke Thaise keuken naar Sint-Niklaas kwam.
+            </p>
+            <p>
+              Elke schotel vertelt een verhaal van traditie, passie en de beste ingrediënten.
+            </p>
+            <a href="/ons-verhaal" class="btn btn--outline">Lees ons verhaal</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thai Divider -->
+    <div class="thai-divider" aria-hidden="true">&#9830; &#9830; &#9830;</div>
+
+    <!-- Reviews -->
+    <section class="reviews-section section section--teal" aria-label="Klantbeoordelingen">
+      <div class="container">
+        <h2 class="section-title">Wat Onze Gasten Zeggen</h2>
+        <div class="google-rating">
+          <span class="google-rating__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+          <span class="google-rating__score">4.6</span>
+          <span>op Google (120+ reviews)</span>
+        </div>
+        <div class="reviews-carousel">
+          <div class="review-card">
+            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-card__text">
+              "Heerlijk eten! De Pad Thai is de beste die ik ooit gehad heb buiten Thailand.
+              De bediening is vriendelijk en het restaurant heeft een gezellige sfeer."
+            </p>
+            <p class="review-card__author">— Sarah V.</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-card__text">
+              "Authentiek Thais eten van topkwaliteit. De groene curry is goddelijk.
+              Altijd vers, altijd lekker. Een echte aanrader in Sint-Niklaas!"
+            </p>
+            <p class="review-card__author">— Jan D.</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-card__text">
+              "Tom Yam Kung zoals in Bangkok! Nipat kookt met hart en ziel.
+              We komen hier minstens twee keer per maand. Absolute favoriet."
+            </p>
+            <p class="review-card__author">— Pieter & Anna</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+            <p class="review-card__text">
+              "Geweldige Massaman curry en super vriendelijke service.
+              Het restaurant is knus ingericht. Zeker de moeite waard!"
+            </p>
+            <p class="review-card__author">— Els M.</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-card__text">
+              "Beste Thaise restaurant in de regio. Verse ingrediënten en
+              je proeft dat alles met liefde gemaakt is. Aanrader voor take-away!"
+            </p>
+            <p class="review-card__author">— Tom B.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Foto's -->
+    <section class="instagram-section section" aria-label="Sfeerbeelden">
+      <div class="container">
+        <h2 class="section-title">Sfeerbeelden</h2>
+        <div class="instagram-grid">
+          <div class="instagram-grid__item"><img src="/images/food/pad-thai-buddha.jpg" alt="Pad Thai met Boeddhabeeld" loading="lazy"></div>
+          <div class="instagram-grid__item"><img src="/images/restaurant/interior-wide.jpg" alt="Restaurant interieur Tib Top Thai" loading="lazy"></div>
+          <div class="instagram-grid__item"><img src="/images/food/ice-cream-mango.jpg" alt="Kokosijs met mango" loading="lazy"></div>
+          <div class="instagram-grid__item"><img src="/images/restaurant/cocktails.jpg" alt="Cocktails bij Tib Top Thai" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/mobile-buttons') %>
+  <script src="/js/main.js"></script>
+  <script src="/js/reviews.js"></script>
+</body>
+</html>

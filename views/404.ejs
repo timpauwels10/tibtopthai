@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <%- include('partials/head') %>
+  <style>
+    .error-page {
+      text-align: center;
+      padding: var(--spacing-2xl) var(--spacing-md);
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .error-page__code {
+      font-family: var(--font-heading);
+      font-size: 8rem;
+      color: var(--color-warm-gold);
+      line-height: 1;
+      margin-bottom: var(--spacing-xs);
+    }
+    .error-page h1 {
+      margin-bottom: var(--spacing-sm);
+    }
+    .error-page p {
+      color: var(--color-text-light);
+      max-width: 400px;
+      margin-bottom: var(--spacing-lg);
+    }
+  </style>
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main>
+    <div class="error-page">
+      <div class="error-page__code">404</div>
+      <h1>Pagina niet gevonden</h1>
+      <p>Sorry, deze pagina bestaat niet of is verplaatst. Misschien vindt u wat u zoekt via onderstaande links.</p>
+      <div style="display: flex; gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center;">
+        <a href="/" class="btn btn--primary">Naar home</a>
+        <a href="/menu" class="btn btn--outline">Bekijk ons menu</a>
+        <a href="/contact" class="btn btn--outline">Contact</a>
+      </div>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,437 @@
+{
+  "proteinChoices": [
+    { "name": "Groenten", "price": 17.50, "vegan": true, "icon": "&#129388;" },
+    { "name": "Tofu", "price": 18.50, "vegan": true, "icon": "&#127793;" },
+    { "name": "Kip", "price": 19.50, "icon": "&#127831;" },
+    { "name": "Varkensvlees", "price": 19.50, "icon": "&#128055;" },
+    { "name": "Rundvlees", "price": 20.50, "icon": "&#128004;" },
+    { "name": "Scampi's", "price": 23.50, "icon": "&#129424;" },
+    { "name": "Eend", "price": 24.50, "icon": "&#129414;" }
+  ],
+  "categories": [
+    {
+      "id": "starter",
+      "name": "Voorgerecht",
+      "hasProteinChoice": false,
+      "items": [
+        {
+          "number": 1,
+          "id": "khaw-keb-thod",
+          "name": "Khaw Keb Thod",
+          "subtitle": "Kroepoek",
+          "description": "Garnalen kroepoek",
+          "price": 4.00,
+          "spicy": 0,
+          "tags": [],
+          "allergens": [2],
+          "chefSpecial": false,
+          "image": "khaw-keb-thod.png"
+        },
+        {
+          "number": 2,
+          "id": "kai-sate",
+          "name": "Kai Sate",
+          "subtitle": "3 stuks",
+          "description": "Huisgemaakte gemarineerde satés van kipfilet met pindasaus",
+          "price": 11.50,
+          "spicy": 0,
+          "tags": [],
+          "allergens": [5, 6],
+          "chefSpecial": false,
+          "featured": true,
+          "image": "kai-sate.jpg"
+        },
+        {
+          "number": 3,
+          "id": "pho-pia-pak-thod",
+          "name": "Pho Pia Pak Thod",
+          "subtitle": "3 stuks",
+          "description": "Huisgemaakte vegetarische loempia's met Thaise zoete chili saus",
+          "price": 11.50,
+          "spicy": 0,
+          "tags": ["vegan"],
+          "allergens": [1, 6],
+          "chefSpecial": false,
+          "image": "pho-pia-pak-thod.jpg"
+        },
+        {
+          "number": 4,
+          "id": "kanom-jeeb-thod",
+          "name": "Kanom Jeeb Thod",
+          "subtitle": "6 stuks",
+          "description": "Gefrituurde dimsum met pruimensaus",
+          "price": 11.50,
+          "spicy": 0,
+          "tags": [],
+          "allergens": [2],
+          "chefSpecial": true,
+          "image": "kanom-jeeb-thod.png"
+        },
+        {
+          "number": 5,
+          "id": "gyoza-thod",
+          "name": "Gyoza Thod",
+          "subtitle": "4 stuks",
+          "description": "Pan-gebraden Aziatische vegetarische dumplings met wasabimayonaise",
+          "price": 11.50,
+          "spicy": 0,
+          "tags": ["vegan"],
+          "allergens": [],
+          "chefSpecial": true,
+          "image": "gyoza-thod.jpg"
+        },
+        {
+          "number": 6,
+          "id": "goong-chup-peang-thod",
+          "name": "Goong Chup Peang Thod",
+          "subtitle": "4 stuks",
+          "description": "Tempura van scampi geserveerd met zoete chilisaus",
+          "price": 11.50,
+          "spicy": 0,
+          "tags": [],
+          "allergens": [2],
+          "chefSpecial": false,
+          "image": "goong-chup-peang-thod.jpg"
+        },
+        {
+          "number": 7,
+          "id": "piek-kai-thod",
+          "name": "Piek Kai Thod",
+          "subtitle": "4 stuks",
+          "description": "Thaise gefrituurde kippenvleugels afgewerkt met knoflook, chili en lente-ui geserveerd met Thaise zoete chilisaus",
+          "price": 11.50,
+          "spicy": 0,
+          "tags": [],
+          "allergens": [],
+          "chefSpecial": false,
+          "image": "piek-kai-thod.png"
+        },
+        {
+          "number": 8,
+          "id": "taohu-thod",
+          "name": "Taohu Thod",
+          "subtitle": "4 stuks",
+          "description": "Gefrituurde tofu met pruimensaus met gemalen pinda's",
+          "price": 11.50,
+          "spicy": 0,
+          "tags": ["vegan"],
+          "allergens": [5, 6],
+          "chefSpecial": false,
+          "image": "taohu-thod.png"
+        }
+      ]
+    },
+    {
+      "id": "curry",
+      "name": "Kerrie",
+      "subtitle": "Geserveerd met witte rijst",
+      "hasProteinChoice": true,
+      "items": [
+        {
+          "number": 9,
+          "id": "tom-kha",
+          "name": "Tom Kha",
+          "description": "Thaise soep met kokosmelk, citroengras en groenten",
+          "spicy": 0,
+          "tags": [],
+          "allergens": [8],
+          "chefSpecial": false,
+          "image": "tom-kha.jpg"
+        },
+        {
+          "number": 10,
+          "id": "tom-yum",
+          "name": "Tom Yum",
+          "description": "Pikante soep met limoen en een subtiele mix van Thaise kruiden",
+          "spicy": 2,
+          "tags": [],
+          "allergens": [8],
+          "chefSpecial": false,
+          "image": "tom-yum.png"
+        },
+        {
+          "number": 11,
+          "id": "wonton-soup",
+          "name": "Wonton Soup",
+          "description": "Thaise ravioli (6 stuks) in bouillon met groentjes",
+          "spicy": 0,
+          "tags": [],
+          "allergens": [],
+          "chefSpecial": false,
+          "image": "wonton-soup.jpg"
+        },
+        {
+          "number": 12,
+          "id": "massaman",
+          "name": "Massaman",
+          "description": "Massaman kerrie bereid met kokosmelk, cashewnoten, ajuin en aardappelen",
+          "spicy": 0,
+          "tags": [],
+          "allergens": [5],
+          "chefSpecial": true,
+          "featured": true,
+          "image": "massaman.jpg"
+        },
+        {
+          "number": 13,
+          "id": "gaeng-kiew-waan",
+          "name": "Gaeng Kiew Waan",
+          "description": "Klassieke groene kerrie met basilicum en groenten in kokosmelk",
+          "spicy": 1,
+          "tags": [],
+          "allergens": [],
+          "chefSpecial": false,
+          "image": "gaeng-kiew-waan.jpg"
+        },
+        {
+          "number": 14,
+          "id": "geang-paneang",
+          "name": "Geang Paneang",
+          "description": "Milde rode kerrie in kokosmelk verrijkt met kaffirlimoenblad",
+          "spicy": 1,
+          "tags": [],
+          "allergens": [],
+          "chefSpecial": true,
+          "image": "geang-paneang.png"
+        },
+        {
+          "number": 15,
+          "id": "geang-geud",
+          "name": "Geang Geud",
+          "description": "Thaise klassieke soep met groenten en ei",
+          "spicy": 0,
+          "tags": [],
+          "allergens": [3],
+          "chefSpecial": false,
+          "image": "geang-geud.png"
+        }
+      ]
+    },
+    {
+      "id": "wok",
+      "name": "Wok",
+      "subtitle": "Geserveerd met witte rijst",
+      "hasProteinChoice": true,
+      "items": [
+        {
+          "number": 16,
+          "id": "phad-med-mamung",
+          "name": "Phad Med Mamung",
+          "description": "Wok met verse groenten en cashewnoten in een smaakvolle saus",
+          "spicy": 0,
+          "tags": [],
+          "allergens": [5],
+          "chefSpecial": true,
+          "image": "phad-med-mamung.png"
+        },
+        {
+          "number": 17,
+          "id": "phad-nam-man-hoy",
+          "name": "Phad Nam Man Hoy",
+          "description": "Wok met oestersaus en verse groentjes",
+          "spicy": 0,
+          "tags": [],
+          "allergens": [],
+          "chefSpecial": false,
+          "image": "phad-nam-man-hoy.png"
+        },
+        {
+          "number": 18,
+          "id": "phad-phet",
+          "name": "Phad Phet",
+          "description": "Pittige Thaise wok met aromatische pad phet currypasta",
+          "spicy": 2,
+          "tags": [],
+          "allergens": [],
+          "chefSpecial": false
+        },
+        {
+          "number": 19,
+          "id": "phad-nam-prik-phaw",
+          "name": "Phad Nam Prik Phaw",
+          "description": "Wok met zoete chili pasta en basilicum met groentjes",
+          "spicy": 1,
+          "tags": [],
+          "allergens": [],
+          "chefSpecial": false,
+          "image": "phad-nam-prik-phaw.png"
+        },
+        {
+          "number": 20,
+          "id": "phad-khing",
+          "name": "Phad Khing",
+          "description": "Wok met gember en exotische groentjes",
+          "spicy": 0,
+          "tags": [],
+          "allergens": [8],
+          "chefSpecial": false
+        },
+        {
+          "number": 21,
+          "id": "phad-kra-prao",
+          "name": "Phad Kra Prao",
+          "description": "Wok met knoflook, rode peper en Thaise basilicum. Het super populaire Thaise streetfood gerecht",
+          "spicy": 2,
+          "tags": [],
+          "allergens": [],
+          "chefSpecial": true,
+          "featured": true,
+          "image": "phad-kra-prao.jpg"
+        },
+        {
+          "number": 22,
+          "id": "khaw-phad",
+          "name": "Khaw Phad",
+          "description": "Gebakken rijst met groentjes",
+          "spicy": 0,
+          "tags": [],
+          "allergens": [3],
+          "chefSpecial": false,
+          "image": "khaw-phad.png"
+        },
+        {
+          "number": 23,
+          "id": "phad-thai",
+          "name": "Phad Thai",
+          "description": "Gebakken rijstnoedels in tamarindesaus met sojascheuten. Het absolute ultieme Thaise noedelgerecht",
+          "spicy": 0,
+          "tags": [],
+          "allergens": [3],
+          "chefSpecial": false,
+          "featured": true,
+          "image": "pad-thai.jpg"
+        }
+      ]
+    },
+    {
+      "id": "specialiteiten",
+      "name": "Specialiteiten",
+      "subtitle": "Geserveerd met witte rijst",
+      "hasProteinChoice": false,
+      "items": [
+        {
+          "number": 24,
+          "id": "phed-ma-kham",
+          "name": "Phed Ma-Kham",
+          "description": "Krokante eend geserveerd in een pittige en lichtzoete tamarindesaus",
+          "price": 24.50,
+          "spicy": 1,
+          "tags": [],
+          "allergens": [6],
+          "chefSpecial": true,
+          "image": "phed-ma-kham.png"
+        },
+        {
+          "number": 25,
+          "id": "ped-krob-pak-ruam",
+          "name": "Ped Krob Pak Ruam",
+          "description": "Gefrituurde eend met groentjes en Thaise saus",
+          "price": 24.50,
+          "spicy": 0,
+          "tags": [],
+          "allergens": [8],
+          "chefSpecial": false,
+          "image": "ped-krob-pak-ruam.png"
+        }
+      ]
+    },
+    {
+      "id": "salades",
+      "name": "Thaise Salades",
+      "subtitle": "Geserveerd met witte rijst",
+      "hasProteinChoice": true,
+      "items": [
+        {
+          "number": 26,
+          "id": "naam-tok",
+          "name": "Naam Tok",
+          "description": "Salade met chili, limoen, gebroken rauwe rijst en mix van exotische Thaise kruiden",
+          "spicy": 1,
+          "tags": [],
+          "allergens": [],
+          "chefSpecial": false,
+          "image": "naam-tok.png"
+        },
+        {
+          "number": 27,
+          "id": "laab",
+          "name": "Laab",
+          "description": "De ultieme Isaan salade met fijngehakt vlees, munt, cayenne peper en gebroken rauwe rijst",
+          "spicy": 1,
+          "tags": [],
+          "allergens": [],
+          "chefSpecial": false,
+          "image": "laab.png"
+        }
+      ]
+    },
+    {
+      "id": "desserts",
+      "name": "Desserts",
+      "subtitle": "Enkel dine-in",
+      "hasProteinChoice": false,
+      "items": [
+        {
+          "id": "kokosijs",
+          "name": "Kokosijs",
+          "subtitle": "2 bolletjes",
+          "description": "Huisgemaakte Thais kokosijs, koud, romig en verfrissend",
+          "price": 9.00,
+          "spicy": 0,
+          "tags": ["vegan"],
+          "allergens": [],
+          "chefSpecial": false,
+          "image": "kokosijs.png"
+        },
+        {
+          "id": "fried-banana-spring-rolls",
+          "name": "Fried Banana Spring Rolls",
+          "subtitle": "2 stuks + 1 bolletje ijs",
+          "description": "Huisgemaakte Thaise bananenloempia's met een bolletje romig kokosijs",
+          "price": 9.00,
+          "spicy": 0,
+          "tags": [],
+          "allergens": [1],
+          "chefSpecial": false,
+          "image": "fried-banana-spring-rolls.png"
+        },
+        {
+          "id": "mochi-ijs",
+          "name": "Mochi met vanille- of frambozenijs",
+          "subtitle": "2 stuks",
+          "description": "Romig ijs omhuld met zachte, chewy Aziatische mochi rijstdeeg",
+          "price": 6.00,
+          "spicy": 0,
+          "tags": [],
+          "allergens": [],
+          "chefSpecial": false,
+          "image": "mochi-ice.png"
+        },
+        {
+          "id": "khanom-sai-sai",
+          "name": "Khanom Sai Sai",
+          "subtitle": "2 stuks",
+          "description": "Thais dessert met kokos en palmsuiker, omhuld met gestoomd rijstmeel gemengd met kokosroom",
+          "price": 8.00,
+          "spicy": 0,
+          "tags": ["vegan"],
+          "allergens": [],
+          "chefSpecial": false,
+          "image": "khanom-sai-sai.png"
+        },
+        {
+          "id": "khanom-thuai",
+          "name": "Khanom Thuai",
+          "subtitle": "2 stuks",
+          "description": "Charmant Thais kokosnootcustarddessert, zoet, romig en tot in de perfectie gestoomd in kleine kopjes",
+          "price": 7.00,
+          "spicy": 0,
+          "tags": [],
+          "allergens": [],
+          "chefSpecial": false,
+          "image": "khanom-thuai.png"
+        }
+      ]
+    }
+  ]
+}

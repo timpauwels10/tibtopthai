@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="/css/order.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main>
+    <div class="confirmation">
+      <div class="confirmation__icon">&#9989;</div>
+      <h1>Bedankt voor uw bestelling!</h1>
+      <p>
+        Uw bestelling is ontvangen en wordt zo snel mogelijk klaargemaakt.
+        U ontvangt een bevestiging via e-mail of telefoon.
+      </p>
+
+      <% if (orderId) { %>
+        <p><strong>Bestelnummer:</strong></p>
+        <div class="confirmation__order-id"><%= orderId %></div>
+      <% } %>
+
+      <p>
+        Heeft u vragen over uw bestelling?<br>
+        Bel ons op <a href="tel:+32471371157">+32 471 37 11 57</a>
+        of stuur een <a href="https://wa.me/32471371157" target="_blank" rel="noopener noreferrer">WhatsApp</a>.
+      </p>
+
+      <div style="margin-top: var(--spacing-lg); display: flex; gap: var(--spacing-sm); justify-content: center; flex-wrap: wrap;">
+        <a href="/" class="btn btn--outline">Terug naar home</a>
+        <a href="/menu" class="btn btn--primary">Bekijk ons menu</a>
+      </div>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>
