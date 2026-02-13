@@ -243,7 +243,8 @@
           "spicy": 2,
           "tags": [],
           "allergens": [],
-          "chefSpecial": false
+          "chefSpecial": false,
+          "image": "phad-phet.png"
         },
         {
           "number": 19,
@@ -264,7 +265,8 @@
           "spicy": 0,
           "tags": [],
           "allergens": [8],
-          "chefSpecial": false
+          "chefSpecial": false,
+          "image": "phad-khing.png"
         },
         {
           "number": 21,
