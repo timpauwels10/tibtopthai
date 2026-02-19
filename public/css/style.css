@@ -636,9 +636,6 @@ p + p {
   background-color: var(--color-deep-teal);
 }
 
-.mobile-buttons__btn--whatsapp {
-  background-color: #25D366;
-}
 
 @media (max-width: 768px) {
   .mobile-buttons {

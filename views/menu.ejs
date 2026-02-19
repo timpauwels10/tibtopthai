@@ -63,7 +63,8 @@
         5: { icon: '\u{1F95C}', name: 'Noten' },
         6: { icon: '\u{1FAD8}', name: 'Soja' },
         7: { icon: '\u{1F95B}', name: 'Melk' },
-        8: { icon: '\u{1F344}', name: 'Champignons' }
+        8: { icon: '\u{1F344}', name: 'Champignons' },
+        9: { icon: '\u{1F416}', name: 'Varkensvlees' }
       };
     %>
 
@@ -94,6 +95,9 @@
                       <span class="protein-legend__icon"><%- choice.icon %></span>
                       <span class="protein-legend__name"><%= choice.name %></span>
                       <span class="protein-legend__price">&euro; <%= choice.price.toFixed(2) %></span>
+                      <% if (choice.takeawayPrice) { %>
+                        <span class="protein-legend__takeaway">take-away &euro; <%= choice.takeawayPrice.toFixed(2) %></span>
+                      <% } %>
                     </div>
                   <% }) %>
                 </div>
@@ -129,7 +133,12 @@
                   </div>
                 </div>
                 <% if (item.price) { %>
-                  <div class="menu-item__price">&euro; <%= item.price.toFixed(2) %></div>
+                  <div class="menu-item__price">
+                    &euro; <%= item.price.toFixed(2) %>
+                    <% if (item.takeawayPrice) { %>
+                      <span class="menu-item__takeaway">take-away &euro; <%= item.takeawayPrice.toFixed(2) %></span>
+                    <% } %>
+                  </div>
                 <% } %>
               </div>
             <% }) %>

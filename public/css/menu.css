@@ -127,6 +127,12 @@
   font-size: 0.95rem;
 }
 
+.protein-legend__takeaway {
+  color: rgba(255, 248, 240, 0.55);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
 /* --- Menu Item --- */
 .menu-item {
   display: flex;
@@ -208,6 +214,14 @@
   font-size: 1.05rem;
   white-space: nowrap;
   flex-shrink: 0;
+  text-align: right;
+}
+
+.menu-item__takeaway {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-light);
 }
 
 /* --- Legend --- */
