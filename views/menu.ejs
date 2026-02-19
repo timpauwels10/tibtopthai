@@ -96,7 +96,7 @@
                       <span class="protein-legend__name"><%= choice.name %></span>
                       <span class="protein-legend__price">&euro; <%= choice.price.toFixed(2) %></span>
                       <% if (choice.takeawayPrice) { %>
-                        <span class="protein-legend__takeaway">take-away &euro; <%= choice.takeawayPrice.toFixed(2) %></span>
+                        <span class="protein-legend__takeaway">afhalen &euro; <%= choice.takeawayPrice.toFixed(2) %></span>
                       <% } %>
                     </div>
                   <% }) %>
@@ -136,7 +136,7 @@
                   <div class="menu-item__price">
                     &euro; <%= item.price.toFixed(2) %>
                     <% if (item.takeawayPrice) { %>
-                      <span class="menu-item__takeaway">take-away &euro; <%= item.takeawayPrice.toFixed(2) %></span>
+                      <span class="menu-item__takeaway">afhalen &euro; <%= item.takeawayPrice.toFixed(2) %></span>
                     <% } %>
                   </div>
                 <% } %>
